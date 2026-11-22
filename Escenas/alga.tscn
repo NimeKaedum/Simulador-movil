@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dv4yloc06ju3m"]
+
+[ext_resource type="Texture2D" uid="uid://dsfg4ibhuqlju" path="res://Imagenes/Algas/Algas.png" id="1_0ljgy"]
+[ext_resource type="PackedScene" uid="uid://bbwjy36nmy5to" path="res://Escenas/spawner.tscn" id="3_7qta0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcypc"]
+
+[node name="Alga" type="RigidBody2D"]
+mass = 0.01
+gravity_scale = 0.2
+
+[node name="Algas" type="Sprite2D" parent="."]
+scale = Vector2(3.169, 3.169)
+texture = ExtResource("1_0ljgy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 100)
+scale = Vector2(8.37181, -0.0971195)
+shape = SubResource("RectangleShape2D_xcypc")
+
+[node name="Spawner" parent="." instance=ExtResource("3_7qta0")]
+position = Vector2(6, -61)
+
+[node name="Spawner2" parent="." instance=ExtResource("3_7qta0")]
+position = Vector2(-57, -5)
+
+[node name="Spawner3" parent="." instance=ExtResource("3_7qta0")]
+position = Vector2(36, 32)

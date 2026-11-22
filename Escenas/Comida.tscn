@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dj06v7r0053y3"]
+
+[ext_resource type="Script" path="res://Scripts/Comida.gd" id="1_vdqev"]
+[ext_resource type="Texture2D" uid="uid://dkk0n4lxd5djv" path="res://Imagenes/Algas/Semillas.png" id="1_yymc8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aamod"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qj3gw"]
+radius = 11.0
+
+[node name="Semilla_escena" type="CharacterBody2D" groups=["Food"]]
+script = ExtResource("1_vdqev")
+
+[node name="CharacterHandGreen" type="Sprite2D" parent="."]
+texture = ExtResource("1_yymc8")
+
+[node name="Colision_Comida" type="CollisionShape2D" parent="."]
+z_index = -1
+shape = SubResource("CircleShape2D_aamod")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_qj3gw")
+
+[node name="Refresh" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Refresh" to="." method="_on_refresh_timeout"]

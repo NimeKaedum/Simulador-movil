@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bju786utd0k4b"]
+
+[ext_resource type="Texture2D" uid="uid://5t1o6ywo281w" path="res://Imagenes/Algas/Alga_Recta.png" id="1_x513w"]
+[ext_resource type="PackedScene" uid="uid://bbwjy36nmy5to" path="res://Escenas/spawner.tscn" id="2_pueur"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sd4jy"]
+
+[node name="Alga_recta" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
+mass = 0.01
+gravity_scale = 0.2
+
+[node name="AlgaRecta" type="Sprite2D" parent="."]
+scale = Vector2(3.16882, 3.16882)
+texture = ExtResource("1_x513w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 98)
+scale = Vector2(7.34327, 0.263128)
+shape = SubResource("RectangleShape2D_sd4jy")
+
+[node name="Spawner" parent="." instance=ExtResource("2_pueur")]
+position = Vector2(27, -64)
+
+[node name="Spawner2" parent="." instance=ExtResource("2_pueur")]
+position = Vector2(-32, 5)

@@ -1,0 +1,511 @@
+[gd_scene load_steps=22 format=3 uid="uid://b5uqmns7fma4e"]
+
+[ext_resource type="Texture2D" uid="uid://17fm557x16v5" path="res://Imagenes/Menu/fondo.jpg" id="1_fssas"]
+[ext_resource type="Texture2D" uid="uid://b87asopa1verk" path="res://Imagenes/Menu/boton.png" id="2_lwklx"]
+[ext_resource type="Texture2D" uid="uid://5ip3b6sif32u" path="res://Imagenes/Menu/no.png" id="3_68dbj"]
+[ext_resource type="Texture2D" uid="uid://clcib1gpyhrey" path="res://Imagenes/Menu/CUADRO.png" id="3_anyb4"]
+[ext_resource type="Texture2D" uid="uid://ddmv7onh7232y" path="res://Imagenes/Menu/si2.png" id="4_bys3v"]
+[ext_resource type="Texture2D" uid="uid://bcx3tsf3sjqc2" path="res://Imagenes/Peces/fishTile_078.png" id="5_7tk0u"]
+[ext_resource type="Texture2D" uid="uid://cn02f0lsv58qr" path="res://Imagenes/Peces/PezVer1.png" id="6_rl8qe"]
+[ext_resource type="Texture2D" uid="uid://dq0e6xo5i1s6t" path="res://Imagenes/Peces/PezAzul.png" id="7_4nx7t"]
+[ext_resource type="Texture2D" uid="uid://dsfg4ibhuqlju" path="res://Imagenes/Algas/Algas.png" id="7_mjxr2"]
+[ext_resource type="Texture2D" uid="uid://qott1vjt4fu6" path="res://Imagenes/Peces/PezRosa.png" id="9_afs4c"]
+[ext_resource type="Texture2D" uid="uid://dtrds3ok36i5s" path="res://Imagenes/Algas/vecteezy_green-seaweed-with-leafs_24090034.png" id="10_pulb2"]
+[ext_resource type="Texture2D" uid="uid://cl3x3c83a8fwg" path="res://Imagenes/Algas/vecteezy_green-algae-sealife_24096964.png" id="12_ybpnn"]
+[ext_resource type="Texture2D" uid="uid://5t1o6ywo281w" path="res://Imagenes/Algas/Alga_Recta.png" id="13_cn2pt"]
+
+[sub_resource type="GDScript" id="GDScript_mrob4"]
+script/source = "extends Control
+
+var parent
+var paloma
+
+func _on_cerrar_pressed():
+	hide()
+
+func _on_salir_pressed():
+	parent = get_tree().get_root().get_node(\"Node2D\")
+	parent.prueba = \"Verde\"
+	paloma = $Si1
+	palomas(paloma)
+
+func _on_h_1_pressed():
+	get_tree().quit()
+
+func _on_h_3_pressed():
+	parent = get_tree().get_root().get_node(\"Node2D\")
+	parent.prueba = \"Rosa\"
+	paloma = $Si3
+	palomas(paloma)
+
+func _on_c_pressed():
+	parent = get_tree().get_root().get_node(\"Node2D\")
+	parent.prueba = \"Azul\"
+	paloma = $Si6
+	palomas(paloma)
+
+func _on_c_3_pressed():
+	parent = get_tree().get_root().get_node(\"Node2D\")
+	parent.prueba = \"Rojo\"
+	paloma = $Si8
+	palomas(paloma)
+
+func _on_p_1_pressed():
+	parent = get_tree().get_root().get_node(\"Node2D\")
+	parent.prueba = \"Larga\"
+	paloma = $Si11
+	palomas(paloma)
+
+func _on_p_2_pressed():
+	parent = get_tree().get_root().get_node(\"Node2D\")
+	parent.prueba = \"Canon\"
+	paloma = $Si12
+	palomas(paloma)
+
+func _on_p_3_pressed():
+	parent = get_tree().get_root().get_node(\"Node2D\")
+	parent.prueba = \"Gorda\"
+	paloma = $Si13
+	palomas(paloma)
+
+func _on_p_4_pressed():
+	parent = get_tree().get_root().get_node(\"Node2D\")
+	parent.prueba = \"Fake\"
+	paloma = $Si14
+	palomas(paloma)
+
+func palomas(chida):
+	$Si1.hide()
+	$Si3.hide()
+	$Si6.hide()
+	$Si8.hide()
+	$Si11.hide()
+	$Si12.hide()
+	$Si13.hide()
+	$Si14.hide()
+	chida.show()
+	
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aj1fw"]
+bg_color = Color(0.318293, 0.675352, 0.897408, 0.392157)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.523781, 0.523781, 0.52378, 1)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oq02e"]
+bg_color = Color(0.614745, 0.614745, 0.614744, 0.392157)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_15a0g"]
+bg_color = Color(0.334122, 0.334122, 0.334122, 0.392157)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dvg36"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nnobl"]
+bg_color = Color(0.392157, 0.392157, 0.392157, 0.392157)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sedbq"]
+bg_color = Color(0.614745, 0.614745, 0.614744, 0.392157)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3bpvq"]
+bg_color = Color(0.334122, 0.334122, 0.334122, 0.392157)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = -3.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_mrob4")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 11.0
+offset_right = 1147.0
+offset_bottom = 553.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 10.0
+offset_right = 1147.0
+offset_bottom = 552.0
+texture = ExtResource("1_fssas")
+expand_mode = 1
+
+[node name="Boton" type="Sprite2D" parent="."]
+position = Vector2(208.5, 296)
+scale = Vector2(1.74479, 5.5)
+texture = ExtResource("2_lwklx")
+
+[node name="Boton3" type="Sprite2D" parent="."]
+position = Vector2(927.094, 296)
+scale = Vector2(1.79069, 5.5)
+texture = ExtResource("2_lwklx")
+
+[node name="Boton2" type="Sprite2D" parent="."]
+position = Vector2(565, 298)
+scale = Vector2(1.75, 5.5)
+texture = ExtResource("2_lwklx")
+
+[node name="Cuadro" type="Sprite2D" parent="."]
+position = Vector2(175.5, 58)
+scale = Vector2(3.35937, 1)
+texture = ExtResource("3_anyb4")
+
+[node name="SALIR" type="Button" parent="."]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 179.0
+offset_right = 268.0
+offset_bottom = 276.0
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_aj1fw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oq02e")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_15a0g")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dvg36")
+text = "."
+
+[node name="INVENTARIO" type="Label" parent="."]
+layout_mode = 0
+offset_left = 783.0
+offset_top = 25.0
+offset_right = 1090.0
+offset_bottom = 94.0
+theme_override_colors/font_outline_color = Color(0.780702, 0.780702, 0.780702, 1)
+theme_override_constants/shadow_offset_x = 30
+theme_override_constants/shadow_offset_y = 30
+theme_override_constants/outline_size = 13
+theme_override_constants/shadow_outline_size = 25
+theme_override_constants/line_spacing = 20
+theme_override_font_sizes/font_size = 50
+text = "INVENTARIO"
+
+[node name="cerrar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1091.0
+offset_top = 20.0
+offset_right = 1135.0
+offset_bottom = 67.0
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_aj1fw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oq02e")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_15a0g")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dvg36")
+text = "."
+
+[node name="No" type="Sprite2D" parent="."]
+position = Vector2(1112, 43)
+scale = Vector2(2.27777, 2.11111)
+texture = ExtResource("3_68dbj")
+
+[node name="HERBIVOROS" type="Label" parent="."]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 482.0
+offset_right = 336.0
+offset_bottom = 537.0
+theme_override_colors/font_outline_color = Color(0.780702, 0.780702, 0.780702, 1)
+theme_override_constants/shadow_offset_x = 30
+theme_override_constants/shadow_offset_y = 30
+theme_override_constants/outline_size = 13
+theme_override_constants/shadow_outline_size = 25
+theme_override_constants/line_spacing = 20
+theme_override_font_sizes/font_size = 40
+text = "HERBIVOROS"
+
+[node name="H1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 37.0
+offset_right = 265.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_nnobl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sedbq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3bpvq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dvg36")
+text = "SALIR DEL JUEGO"
+
+[node name="Si1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(262, 180)
+scale = Vector2(1.35, 1.44444)
+texture = ExtResource("4_bys3v")
+
+[node name="H3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 298.0
+offset_right = 268.0
+offset_bottom = 395.0
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_aj1fw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oq02e")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_15a0g")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dvg36")
+text = "."
+
+[node name="Si3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(262, 301)
+scale = Vector2(1.35, 1.44444)
+texture = ExtResource("4_bys3v")
+
+[node name="CARNIVOROS" type="Label" parent="."]
+layout_mode = 0
+offset_left = 447.0
+offset_top = 484.0
+offset_right = 702.0
+offset_bottom = 539.0
+theme_override_colors/font_outline_color = Color(0.780702, 0.780702, 0.780702, 1)
+theme_override_constants/shadow_offset_x = 30
+theme_override_constants/shadow_offset_y = 30
+theme_override_constants/outline_size = 13
+theme_override_constants/shadow_outline_size = 25
+theme_override_constants/line_spacing = 20
+theme_override_font_sizes/font_size = 40
+text = "CARNIVOROS"
+
+[node name="C" type="Button" parent="."]
+layout_mode = 0
+offset_left = 501.0
+offset_top = 177.0
+offset_right = 623.0
+offset_bottom = 274.0
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_aj1fw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oq02e")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_15a0g")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dvg36")
+text = "."
+
+[node name="Si6" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(617, 180)
+scale = Vector2(1.35, 1.44444)
+texture = ExtResource("4_bys3v")
+
+[node name="C3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 501.0
+offset_top = 294.0
+offset_right = 623.0
+offset_bottom = 391.0
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_aj1fw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oq02e")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_15a0g")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dvg36")
+text = "."
+
+[node name="Si8" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(615, 297)
+scale = Vector2(1.35, 1.44444)
+texture = ExtResource("4_bys3v")
+
+[node name="PLANTAS" type="Label" parent="."]
+layout_mode = 0
+offset_left = 843.0
+offset_top = 485.0
+offset_right = 1018.0
+offset_bottom = 540.0
+theme_override_colors/font_outline_color = Color(0.780702, 0.780702, 0.780702, 1)
+theme_override_constants/shadow_offset_x = 30
+theme_override_constants/shadow_offset_y = 30
+theme_override_constants/outline_size = 13
+theme_override_constants/shadow_outline_size = 25
+theme_override_constants/line_spacing = 20
+theme_override_font_sizes/font_size = 40
+text = "PLANTAS"
+
+[node name="P1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 790.0
+offset_top = 177.0
+offset_right = 912.0
+offset_bottom = 274.0
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_aj1fw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oq02e")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_15a0g")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dvg36")
+text = "."
+
+[node name="Si11" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(906, 180)
+scale = Vector2(1.35, 1.44444)
+texture = ExtResource("4_bys3v")
+
+[node name="P2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 945.0
+offset_top = 174.0
+offset_right = 1067.0
+offset_bottom = 271.0
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_aj1fw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oq02e")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_15a0g")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dvg36")
+text = "."
+
+[node name="Si12" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1065, 180)
+scale = Vector2(1.35, 1.44444)
+texture = ExtResource("4_bys3v")
+
+[node name="P3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 790.0
+offset_top = 294.0
+offset_right = 912.0
+offset_bottom = 391.0
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_aj1fw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oq02e")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_15a0g")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dvg36")
+text = "."
+
+[node name="Si13" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(908, 299)
+scale = Vector2(1.35, 1.44444)
+texture = ExtResource("4_bys3v")
+
+[node name="P4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 945.0
+offset_top = 293.0
+offset_right = 1067.0
+offset_bottom = 390.0
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_aj1fw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oq02e")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_15a0g")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dvg36")
+text = "."
+
+[node name="FishTile080" type="Sprite2D" parent="."]
+position = Vector2(554, 343)
+texture = ExtResource("5_7tk0u")
+
+[node name="FishTile078" type="Sprite2D" parent="."]
+position = Vector2(559, 230)
+texture = ExtResource("7_4nx7t")
+
+[node name="PezVer2" type="Sprite2D" parent="."]
+position = Vector2(200, 227)
+texture = ExtResource("6_rl8qe")
+
+[node name="PezVer4" type="Sprite2D" parent="."]
+position = Vector2(206, 350)
+texture = ExtResource("9_afs4c")
+
+[node name="Algas" type="Sprite2D" parent="."]
+position = Vector2(849, 226)
+scale = Vector2(0.019475, 0.019475)
+texture = ExtResource("10_pulb2")
+
+[node name="Algas2" type="Sprite2D" parent="."]
+position = Vector2(1005, 229)
+texture = ExtResource("7_mjxr2")
+
+[node name="Semillas" type="Sprite2D" parent="."]
+position = Vector2(851, 343)
+scale = Vector2(0.0187341, 0.0187341)
+texture = ExtResource("12_ybpnn")
+
+[node name="Semillas2" type="Sprite2D" parent="."]
+position = Vector2(1003, 347)
+texture = ExtResource("13_cn2pt")
+
+[node name="Si14" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1063, 298)
+scale = Vector2(1.35, 1.44444)
+texture = ExtResource("4_bys3v")
+
+[connection signal="pressed" from="SALIR" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="cerrar" to="." method="_on_cerrar_pressed"]
+[connection signal="pressed" from="H1" to="." method="_on_h_1_pressed"]
+[connection signal="pressed" from="H3" to="." method="_on_h_3_pressed"]
+[connection signal="pressed" from="C" to="." method="_on_c_pressed"]
+[connection signal="pressed" from="C3" to="." method="_on_c_3_pressed"]
+[connection signal="pressed" from="P1" to="." method="_on_p_1_pressed"]
+[connection signal="pressed" from="P2" to="." method="_on_p_2_pressed"]
+[connection signal="pressed" from="P3" to="." method="_on_p_3_pressed"]
+[connection signal="pressed" from="P4" to="." method="_on_p_4_pressed"]

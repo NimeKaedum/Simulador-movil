@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dw6jtva6kl5pp"]
+
+[ext_resource type="Texture2D" uid="uid://b45rxagpda02d" path="res://Imagenes/Peces/PezVerde.png" id="1_flib1"]
+[ext_resource type="Script" path="res://Scripts/MovPez.gd" id="2_16uwh"]
+
+[node name="PezVerde" type="Sprite2D"]
+texture = ExtResource("1_flib1")
+script = ExtResource("2_16uwh")

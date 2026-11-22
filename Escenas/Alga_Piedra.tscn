@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://j2jgqyuywayh"]
+
+[ext_resource type="Texture2D" uid="uid://mio0isw308u7" path="res://Imagenes/Algas/vecteezy_sea-weed-illustrations_27250382.png" id="1_t3t5u"]
+[ext_resource type="PackedScene" uid="uid://bbwjy36nmy5to" path="res://Escenas/spawner.tscn" id="2_x1yif"]
+
+[node name="RigidBody2D" type="RigidBody2D"]
+mass = 0.01
+gravity_scale = 0.2
+
+[node name="VecteezySea-weed-illustrations27250382" type="Sprite2D" parent="."]
+scale = Vector2(0.0706206, 0.0706206)
+texture = ExtResource("1_t3t5u")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(15, 92)
+scale = Vector2(1.47964, 1.47964)
+polygon = PackedVector2Array(-28, 5, 28, 5, 25, -2, 28, -14, 22, -27, 10, -29, -22, -22, -30, -14, -27, -5)
+
+[node name="Spawner" parent="." instance=ExtResource("2_x1yif")]
+position = Vector2(7, -24)
+
+[node name="Spawner2" parent="." instance=ExtResource("2_x1yif")]
+position = Vector2(-16, 36)
+
+[node name="Spawner3" parent="." instance=ExtResource("2_x1yif")]
+position = Vector2(43, 7)

@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://btrl2hknqmf5n"]
+
+[ext_resource type="Texture2D" uid="uid://dtrds3ok36i5s" path="res://Imagenes/Algas/vecteezy_green-seaweed-with-leafs_24090034.png" id="1_xbq2o"]
+[ext_resource type="PackedScene" uid="uid://bbwjy36nmy5to" path="res://Escenas/spawner.tscn" id="2_tt632"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y3ql8"]
+
+[node name="RigidBody2D" type="RigidBody2D"]
+
+[node name="VecteezyGreen-seaweed-with-leafs24090034" type="Sprite2D" parent="."]
+scale = Vector2(0.203118, 0.203118)
+texture = ExtResource("1_xbq2o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 446)
+scale = Vector2(12.3079, 3.83554)
+shape = SubResource("RectangleShape2D_y3ql8")
+
+[node name="Spawner" parent="." instance=ExtResource("2_tt632")]
+position = Vector2(68, -165)
+
+[node name="Spawner2" parent="." instance=ExtResource("2_tt632")]
+position = Vector2(0, 13)
+
+[node name="Spawner3" parent="." instance=ExtResource("2_tt632")]
+position = Vector2(-59, 160)
+
+[node name="Spawner4" parent="." instance=ExtResource("2_tt632")]
+position = Vector2(23, 327)

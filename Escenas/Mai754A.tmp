@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://cebrcd5nl6rna"]
+
+[ext_resource type="Script" path="res://Scripts/Camara.gd" id="1_waip2"]
+[ext_resource type="PackedScene" uid="uid://c8xppjeuciv04" path="res://Escenas/pez_enemy.tscn" id="3_y8low"]
+[ext_resource type="Texture2D" uid="uid://bowjyfqs24f63" path="res://Imagenes/FondoMarino.jpg" id="4_jqloa"]
+[ext_resource type="PackedScene" uid="uid://qlhvsr0jlwg" path="res://Escenas/jugador_probar.tscn" id="4_pohyg"]
+[ext_resource type="PackedScene" uid="uid://dv023v30s6wwo" path="res://Escenas/Pez_Vida.tscn" id="5_e1lvf"]
+[ext_resource type="PackedScene" uid="uid://dv4yloc06ju3m" path="res://Escenas/alga.tscn" id="6_xua3n"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="FondoMarino" type="Sprite2D" parent="."]
+position = Vector2(7.49998, 2.99998)
+scale = Vector2(3.79902, 3.04651)
+texture = ExtResource("4_jqloa")
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("object_to_follow")]
+zoom = Vector2(0.495, 0.495)
+script = ExtResource("1_waip2")
+object_to_follow = NodePath("../FondoMarino")
+
+[node name="Jugador_Probar" parent="." instance=ExtResource("4_pohyg")]
+position = Vector2(86, -125)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-1155, -646, -1151, 638, 1152, 647, 1157, -642, -1183, -645, -1185, -697, 1233, -690, 1216, 702, -1214, 702)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("5_e1lvf")]
+position = Vector2(128, 97)
+
+[node name="PezEnemy" parent="." instance=ExtResource("3_y8low")]
+position = Vector2(-274, 69)
+
+[node name="Pez_TiempoVida" parent="." instance=ExtResource("5_e1lvf")]
+position = Vector2(-99, 93)
+
+[node name="Alga" parent="." instance=ExtResource("6_xua3n")]
+position = Vector2(-684, 488)

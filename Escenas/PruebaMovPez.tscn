@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=3 uid="uid://wx3251sbsql8"]
+
+[ext_resource type="Script" path="res://Scripts/MovimientoPez.gd" id="1_2h30k"]
+[ext_resource type="Texture2D" uid="uid://cwlafe2aag32t" path="res://fishTilesheet.png" id="2_u841d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gtju"]
+atlas = ExtResource("2_u841d")
+region = Rect2(0, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xufc4"]
+atlas = ExtResource("2_u841d")
+region = Rect2(64, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnt5v"]
+atlas = ExtResource("2_u841d")
+region = Rect2(128, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdsgx"]
+atlas = ExtResource("2_u841d")
+region = Rect2(192, 256, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6qur0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gtju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xufc4")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnt5v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdsgx")
+}],
+"loop": true,
+"name": &"eating",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6dhkx"]
+radius = 15.0
+height = 50.0587
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_2h30k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6qur0")
+animation = &"Walking"
+
+[node name="ChancesStateTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="WalkingTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 3)
+rotation = 1.57086
+shape = SubResource("CapsuleShape2D_6dhkx")
+
+[connection signal="timeout" from="ChancesStateTimer" to="." method="_on_chances_state_timer_timeout"]
+[connection signal="timeout" from="WalkingTimer" to="." method="_on_walking_timer_timeout"]
